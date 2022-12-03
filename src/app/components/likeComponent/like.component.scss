@@ -1,0 +1,16 @@
+.like__container{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    img{
+        width: 10rem
+    }
+
+    .like__counter{
+        margin-left: 1rem;
+        font-size: 4rem
+    }
+}
