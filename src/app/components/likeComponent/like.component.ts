@@ -23,7 +23,6 @@ export class LikeComponent implements OnInit {
     getId(){
         if(!this.id){
             this.id = this.uniqueIdService.generateUniqueIdWithPrefix(LikeComponent.name)
-            console.log("🚀 ~ file: like.component.ts:24 ~ LikeComponent ~ getId ~  this.id",  this.id)
         }
     }
 
