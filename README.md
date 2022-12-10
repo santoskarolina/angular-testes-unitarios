@@ -20,3 +20,10 @@ ng test-common
 ```
 ng test-ci
 ```
+
+## Running test covarege
+
+```
+ng test-coverage
+```
+
