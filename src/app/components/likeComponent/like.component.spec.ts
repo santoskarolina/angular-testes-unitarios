@@ -21,22 +21,21 @@ describe(LikeComponent.name, () => {
       service = new UniqueIdService();
     })
 
-    it(`Shoud create component ${LikeComponent.name}`, () => {
+    it(`Should create component ${LikeComponent.name}`, () => {
          expect(component).toBeTruthy()
     })
 
-    it('Shoud auto generete id when id input property is missing', () => {
+    it('Should auto-generete id during ngOnInit when (@Input id) it NOT assigned', () => {
         expect(component.id).toBeTruthy()
     })
 
-    it('Shoud not generete id when id input property is present', () => {
+    it('Should NOT auto-generete id during ngOnInit when (@Input id) it assigned', () => {
         const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name)
         component.id = componentID
         expect(component.id).toBe(componentID)
     })
 
-    it(`#${LikeComponent.prototype.like.name}
-    should trigger (@Output liked) when called` , () => {
+    it(`#${LikeComponent.prototype.like.name} should trigger (@Output liked) when called` , () => {
         // component.liked.subscribe({
         //     next: () => {
         //         expect(true).toBeTrue()
