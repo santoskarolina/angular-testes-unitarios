@@ -9,7 +9,8 @@
     "test": "ng test",
     "test-common": "ng test --browsers Chrome,Firefox",
     "test-ci": "ng test --watch=false --browsers ChromeHeadless,FirefoxNoHeadless",
-    "test-ci-unit": "ng test --watch=false --reporters junit --browsers ChromeHeadless,FirefoxNoHeadless"
+    "test-ci-unit": "ng test --watch=false --reporters junit --browsers ChromeHeadless,FirefoxNoHeadless",
+    "test-coverage": "ng test --watch=false --sourceMap=true --codeCoverage=true --browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
