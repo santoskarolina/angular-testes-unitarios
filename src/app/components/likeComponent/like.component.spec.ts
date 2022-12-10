@@ -35,13 +35,17 @@ describe(LikeComponent.name, () => {
         expect(component.id).toBe(componentID)
     })
 
-    it(`${LikeComponent.prototype.like.name} should trigger emission when called` , done => {
-        component.liked.subscribe({
-            next: () => {
-                expect(true).toBeTrue()
-                done()
-            }
-        })
+    it(`${LikeComponent.prototype.like.name} should trigger emission when called` , () => {
+        // component.liked.subscribe({
+        //     next: () => {
+        //         expect(true).toBeTrue()
+        //         done()
+        //     }
+        // })
+        // component.like()
+
+        spyOn(component.liked, 'emit')
         component.like()
+        expect(component.liked.emit).toHaveBeenCalled()
     });
 })
