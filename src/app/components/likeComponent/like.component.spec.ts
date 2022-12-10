@@ -35,7 +35,8 @@ describe(LikeComponent.name, () => {
         expect(component.id).toBe(componentID)
     })
 
-    it(`${LikeComponent.prototype.like.name} should trigger emission when called` , () => {
+    it(`#${LikeComponent.prototype.like.name}
+    should trigger (@Output liked) when called` , () => {
         // component.liked.subscribe({
         //     next: () => {
         //         expect(true).toBeTrue()
