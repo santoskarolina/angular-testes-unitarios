@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<testsuite name="Firefox 107.0 (Windows 10)" package="" timestamp="2022-12-10T15:14:36" id="0" hostname="Karol" tests="8" errors="0" failures="0" time="0.14">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0"/>
+  </properties>
+  <testcase name="LikeComponent #like should trigger (@Output liked) when called" time="0.069" classname="Firefox_107_0_(Windows_10).LikeComponent"/>
+  <testcase name="LikeComponent Should NOT auto-generete id during ngOnInit when (@Input id) it assigned" time="0.023" classname="Firefox_107_0_(Windows_10).LikeComponent"/>
+  <testcase name="LikeComponent Should auto-generete id during ngOnInit when (@Input id) it NOT assigned" time="0.019" classname="Firefox_107_0_(Windows_10).LikeComponent"/>
+  <testcase name="LikeComponent Should create component LikeComponent" time="0.024" classname="Firefox_107_0_(Windows_10).LikeComponent"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix should throw when called with empty prefix" time="0.002" classname="Firefox_107_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #getNumbersOfGeneratedUniqueIds&#xA;    should return the number of generetedIds when called" time="0.001" classname="Firefox_107_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix&#xA;    should not generete duplicate IDs when called multiple times" time="0.002" classname="Firefox_107_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generateUniqueIdWithPrefix&#xA;    should generete id when called with prefix" time="0" classname="Firefox_107_0_(Windows_10).UniqueIdService"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
