@@ -11,7 +11,7 @@ describe(LikeComponent.name, () => {
     beforeEach(async() => {
         await TestBed.configureTestingModule({
            imports: [LikeModule]
-        }).compileComponents() ;
+        }).compileComponents();
     })
 
     beforeEach(() => {

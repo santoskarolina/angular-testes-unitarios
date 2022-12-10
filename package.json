@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test-common": "ng test --browsers Chrome,Firefox"
+    "test-common": "ng test --browsers Chrome,Firefox",
+    "test-ci": "ng test --watch=false --browsers ChromeHeadless,FirefoxHeadless"
   },
   "private": true,
   "dependencies": {
