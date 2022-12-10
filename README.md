@@ -27,3 +27,10 @@ ng test-ci
 ng test-coverage
 ```
 
+
+## Running test with Junit report
+
+```
+ng test-ci-unit
+```
+
