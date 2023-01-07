@@ -70,4 +70,19 @@ describe(PhotoComponent.name, () => {
     const like__counter = fixture.nativeElement.querySelector('.like__counter');
     expect(like__counter.getAttribute('aria-label')).toBe('0: people liked')
   })
+
+  it('(DOM) Should display image with src and title when bound to properties', () =>{
+    const title = "Title of image";
+    const src = 'https://via.placeholder.com/600/92c952';
+
+    component.title = title;
+    component.photo = src;
+
+    fixture.detectChanges()
+
+    const imgElement = fixture.nativeElement.querySelector('img')
+
+    expect(imgElement.getAttribute('src')).toBe(src);
+    expect(imgElement.getAttribute('alt')).toBe(title);
+  })
 });
