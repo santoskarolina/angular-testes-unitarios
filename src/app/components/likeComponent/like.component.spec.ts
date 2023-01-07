@@ -48,4 +48,14 @@ describe(LikeComponent.name, () => {
         component.like()
         expect(component.liked.emit).toHaveBeenCalled()
     });
+
+    it('Shoud has id atribute', () => {
+        const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name)
+        component.id = componentID
+        fixture.detectChanges();
+
+        const span = fixture.nativeElement.querySelector('span')
+
+        expect(span.getAttribute('id')).toBe(componentID)
+    })
 })
