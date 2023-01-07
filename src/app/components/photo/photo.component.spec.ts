@@ -1,6 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-
 import { PhotoComponent } from './photo.component';
+import { PhotoModule } from './photo.module';
 
 describe(PhotoComponent.name, () => {
   let component: PhotoComponent;
@@ -8,9 +8,8 @@ describe(PhotoComponent.name, () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PhotoComponent ]
-    })
-    .compileComponents();
+      imports: [PhotoModule]
+   }).compileComponents();
   });
 
   beforeEach(() => {
@@ -18,6 +17,7 @@ describe(PhotoComponent.name, () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
 
   it(`should create ${PhotoComponent.name}`, () => {
     expect(component).toBeTruthy();
@@ -48,4 +48,26 @@ describe(PhotoComponent.name, () => {
 
     expect(times).toBe(2)
   }));
+
+
+  it(`Should display number of likes when (@Input likes) is incremented`, () => {
+    component.likes++;
+    fixture.detectChanges();
+
+    const like__counter = fixture.nativeElement.querySelector('.like__counter');
+    expect(like__counter.textContent.trim()).toBe('1');
+  })
+
+  it('Shoul update aria-label when (@Input likes) is incremented', () =>{
+    component.likes++;
+    fixture.detectChanges();
+
+    const like__counter = fixture.nativeElement.querySelector('.like__counter');
+    expect(like__counter.getAttribute('aria-label')).toBe('1: people liked')
+  })
+
+  it('Shoul have aria-label with 0 (@Input likes)', () =>{
+    const like__counter = fixture.nativeElement.querySelector('.like__counter');
+    expect(like__counter.getAttribute('aria-label')).toBe('0: people liked')
+  })
 });

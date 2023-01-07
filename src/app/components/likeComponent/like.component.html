@@ -1,4 +1,5 @@
-<div class="like__container" (click)="like()" name="Like">
+<div class="like__container" (click)="like()">
     <img src="https://cdn-icons-png.flaticon.com/512/2107/2107956.png" alt="Like" srcset="">
-    <p class="like__counter">{{ likes }}</p>
+    <span class="like__counter" aria-live="true"
+    aria-atomic="true" [attr.aria-label]="likes + ': people liked'" [attr.id]="id">{{ likes }}</span>
 </div>
