@@ -1,5 +1,17 @@
 <div class="app__container">
   <p>Teste unitários</p>
 
-  <app-photo title="reprehenderit est deserunt velit ipsam" photo="https://via.placeholder.com/600/771796"></app-photo>
+  <div class="app__content">
+
+    <app-button-next-photo [isNextPage]="false"></app-button-next-photo>
+
+    <app-photo
+    (liked)="like()"
+    [likes]="likes"
+    title="reprehenderit est deserunt velit ipsam" photo="https://via.placeholder.com/600/771796"></app-photo>
+
+    <app-button-next-photo [isNextPage]="true"></app-button-next-photo>
+
+  </div>
+
 </div>

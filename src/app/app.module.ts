@@ -1,3 +1,4 @@
+import { ButtonNextPhotoModule } from './components/button-next-photo/button-next-photo.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,13 +9,14 @@ import { PhotoModule } from './components/photo/photo.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LikeModule,
-    PhotoModule
+    PhotoModule,
+    ButtonNextPhotoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+.button__container{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    background-color: rgb(16, 67, 109);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+}
