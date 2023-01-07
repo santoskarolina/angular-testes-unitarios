@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { PhotoComponent } from './photo.component';
 
-describe('PhotoComponent', () => {
+describe(PhotoComponent.name, () => {
   let component: PhotoComponent;
   let fixture: ComponentFixture<PhotoComponent>;
 
@@ -19,7 +19,33 @@ describe('PhotoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it(`should create ${PhotoComponent.name}`, () => {
     expect(component).toBeTruthy();
   });
+
+  it(`#${PhotoComponent.prototype.likePhoto.name} should trigger (@Output liked) once when called
+  multiple times whitin debounce time`, fakeAsync(() => {
+    let times = 0;
+    component.liked.subscribe({ next: () => { times++ } })
+
+    component.likePhoto()
+    component.likePhoto()
+
+    tick(500)
+    expect(times).toBe(1)
+  }));
+
+  it(`#${PhotoComponent.prototype.likePhoto.name} should trigger (@Output liked) two times when called outside debouce
+  time`, fakeAsync(() => {
+    let times = 0;
+    component.liked.subscribe({ next: () => { times++ } })
+
+    component.likePhoto();
+    tick(500);
+
+    component.likePhoto();
+    tick(500);
+
+    expect(times).toBe(2)
+  }));
 });
