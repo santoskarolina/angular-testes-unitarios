@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LikeModule } from './components/likeComponent/like.module';
+import { PhotoModule } from './components/photo/photo.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { LikeModule } from './components/likeComponent/like.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LikeModule
+    LikeModule,
+    PhotoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+<div class="photo__container">
+    <img [src]="photo" [alt]="title" tabindex="0" class="photo__photo">
+
+
+    <div class="photo__like">
+        <app-like [likes]="likes" (liked)="likePhoto()"></app-like>
+    </div>
+
+</div>
