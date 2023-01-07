@@ -49,7 +49,7 @@ describe(LikeComponent.name, () => {
         expect(component.liked.emit).toHaveBeenCalled()
     });
 
-    it('Shoud has id atribute', () => {
+    it('(DOM) Should have id atribute', () => {
         const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name)
         component.id = componentID
         fixture.detectChanges();

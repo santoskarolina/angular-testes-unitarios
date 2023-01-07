@@ -19,7 +19,7 @@ describe(PhotoComponent.name, () => {
   });
 
 
-  it(`should create ${PhotoComponent.name}`, () => {
+  it(`Should create ${PhotoComponent.name}`, () => {
     expect(component).toBeTruthy();
   });
 
@@ -50,7 +50,7 @@ describe(PhotoComponent.name, () => {
   }));
 
 
-  it(`Should display number of likes when (@Input likes) is incremented`, () => {
+  it(`(DOM) Should display number of likes when (@Input likes) is incremented`, () => {
     component.likes++;
     fixture.detectChanges();
 
@@ -58,7 +58,7 @@ describe(PhotoComponent.name, () => {
     expect(like__counter.textContent.trim()).toBe('1');
   })
 
-  it('Shoul update aria-label when (@Input likes) is incremented', () =>{
+  it('(DOM) Should update aria-label when (@Input likes) is incremented', () => {
     component.likes++;
     fixture.detectChanges();
 
@@ -66,7 +66,7 @@ describe(PhotoComponent.name, () => {
     expect(like__counter.getAttribute('aria-label')).toBe('1: people liked')
   })
 
-  it('Shoul have aria-label with 0 (@Input likes)', () =>{
+  it('(DOM) Should have aria-label with 0 (@Input likes)', () =>{
     const like__counter = fixture.nativeElement.querySelector('.like__counter');
     expect(like__counter.getAttribute('aria-label')).toBe('0: people liked')
   })
