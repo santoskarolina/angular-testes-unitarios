@@ -36,15 +36,8 @@ describe(LikeComponent.name, () => {
     })
 
     it(`#${LikeComponent.prototype.like.name} should trigger (@Output liked) when called` , () => {
-        // component.liked.subscribe({
-        //     next: () => {
-        //         expect(true).toBeTrue()
-        //         done()
-        //     }
-        // })
-        // component.like()
-
         spyOn(component.liked, 'emit')
+        fixture.detectChanges();
         component.like()
         expect(component.liked.emit).toHaveBeenCalled()
     });
@@ -58,4 +51,19 @@ describe(LikeComponent.name, () => {
 
         expect(span.getAttribute('id')).toBe(componentID)
     })
+
+    it('(DOM) Should display number of likes when clicked', done =>{
+        component.liked.subscribe({
+            next: () => {
+                component.likes++;
+                fixture.detectChanges();
+                const likeCounterElement = fixture.nativeElement.querySelector('.like__counter');
+                expect(likeCounterElement.textContent.trim()).toBe('1');
+                done();
+            }
+        })
+
+        const likeContainerElement: HTMLElement = fixture.nativeElement.querySelector('.like__container')
+        likeContainerElement.click();
+    });
 })
