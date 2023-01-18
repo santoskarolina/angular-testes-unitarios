@@ -80,7 +80,7 @@ describe(PhotoComponent.name, () => {
 
     fixture.detectChanges()
 
-    const imgElement = fixture.nativeElement.querySelector('img')
+    const imgElement: HTMLImageElement = fixture.nativeElement.querySelector('img')
 
     expect(imgElement.getAttribute('src')).toBe(src);
     expect(imgElement.getAttribute('alt')).toBe(title);
