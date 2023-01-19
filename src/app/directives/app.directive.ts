@@ -9,11 +9,11 @@ export class AppDirective{
 
     constructor() {  }
 
-    @HostListener('click') onCLick(event: Event) {
+    @HostListener('click', ['$event']) onCLick(event: Event) {
       this.appDirective.emit(event)
     }
 
-    @HostListener('keyup') onMouseLeave(event: Event) {
+    @HostListener('keyup', ['$event']) onMouseLeave(event: Event) {
       this.appDirective.emit(event)
     }
 }
