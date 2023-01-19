@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LikeModule } from './components/likeComponent/like.module';
 import { PhotoModule } from './components/photo/photo.module';
+import { PhotoBoardModule } from './components/photosBoard/photo-board.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhotoModule } from './components/photo/photo.module';
     AppRoutingModule,
     LikeModule,
     PhotoModule,
-    ButtonNextPhotoModule
+    ButtonNextPhotoModule,
+    PhotoBoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

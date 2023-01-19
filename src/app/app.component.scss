@@ -1,15 +1,10 @@
-.app__container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-
     .app__content{
-        width: 100%;
+        width: 100% !important;
         display: flex;
         align-items:center;
-        justify-content: space-around;
+
+        app-photos-board{
+            width: 100%;
+        }
     }
 
-}

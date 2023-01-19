@@ -1,0 +1,7 @@
+.photos{
+    width: 100% !important;
+    place-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

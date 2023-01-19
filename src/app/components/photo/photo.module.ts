@@ -1,18 +1,18 @@
+import { PhotoBoardModule } from './../photosBoard/photo-board.module';
 import { LikeModule } from './../likeComponent/like.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhotoComponent } from './photo.component';
 
 
-
 @NgModule({
   declarations: [
-    PhotoComponent
+    PhotoComponent,
   ],
   imports: [
     CommonModule,
-    LikeModule
+    LikeModule,
   ],
-  exports: [PhotoComponent]
+  exports: [ PhotoComponent ]
 })
 export class PhotoModule { }

@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PhotoService, Photos } from './services/photos/photos.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'testes-unitarios';
+export class AppComponent implements OnInit {
 
-  public likes = 0;
+  photos: Photos[] = [];
 
-  public like(){
-    this.likes++
+  constructor(private service: PhotoService){}
+
+
+  ngOnInit(): void {
+    this.service.getPhotos().subscribe({next: (photos) => this.photos = photos.slice(0,15)});
   }
+
 }

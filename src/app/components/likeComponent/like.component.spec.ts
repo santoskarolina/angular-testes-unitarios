@@ -30,26 +30,26 @@ describe(LikeComponent.name, () => {
     })
 
     it('Should NOT auto-generete id during ngOnInit when (@Input id) it assigned', () => {
-        const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name)
-        component.id = componentID
-        expect(component.id).toBe(componentID)
+        const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name);
+        component.id = componentID;
+        expect(component.id).toBe(componentID);
     })
 
     it(`#${LikeComponent.prototype.like.name} should trigger (@Output liked) when called` , () => {
-        spyOn(component.liked, 'emit')
+        spyOn(component.liked, 'emit');
         fixture.detectChanges();
-        component.like()
-        expect(component.liked.emit).toHaveBeenCalled()
+        component.like();
+        expect(component.liked.emit).toHaveBeenCalled();
     });
 
     it('(DOM) Should have id atribute', () => {
-        const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name)
+        const componentID = service.generateUniqueIdWithPrefix(LikeComponent.name);
         component.id = componentID
         fixture.detectChanges();
 
-        const span = fixture.nativeElement.querySelector('span')
+        const span = fixture.nativeElement.querySelector('span');
 
-        expect(span.getAttribute('id')).toBe(componentID)
+        expect(span.getAttribute('id')).toBe(componentID);
     })
 
     it('(DOM) Should display number of likes when clicked', done =>{
@@ -61,7 +61,7 @@ describe(LikeComponent.name, () => {
                 expect(likeCounterElement.textContent.trim()).toBe('1');
                 done();
             }
-        })
+        });
 
         const likeContainerElement: HTMLElement = fixture.nativeElement.querySelector('.like__container')
         likeContainerElement.click();
@@ -76,11 +76,11 @@ describe(LikeComponent.name, () => {
                 expect(likeCounterElement.textContent.trim()).toBe('1');
                 done();
             }
-        })
+        });
 
         const likeContainerElement: HTMLElement = fixture.nativeElement.querySelector('.like__container')
 
-        const keyDownEvent = new KeyboardEvent('keydown', { key: 'Enter' });
+        const keyDownEvent = new KeyboardEvent('keyup', { key: 'Enter' });
         likeContainerElement.dispatchEvent(keyDownEvent);
     });
 })
