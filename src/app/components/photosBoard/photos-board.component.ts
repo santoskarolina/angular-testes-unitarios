@@ -11,9 +11,15 @@ export class PhotosBoardsComponent implements OnChanges{
 
     @Input() public photos: Photos[] = [];
 
+    public photosIds: number[] = [];
+
     ngOnChanges(changes: SimpleChanges): void {
         if(changes['photos']){
-            this.photos = changes['photos'].currentValue;
+            this.fillPhotosIds(changes['photos'].currentValue);
         }
-      }
+    }
+
+    fillPhotosIds(photos: Photos[]){
+      this.photosIds = photos.map(photo => photo.id);
+    }
 }
