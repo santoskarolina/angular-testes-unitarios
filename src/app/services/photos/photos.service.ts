@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, delay } from 'rxjs';
+import { Observable, delay, map } from 'rxjs';
 
 
 export interface Photos{
@@ -19,7 +19,13 @@ export class PhotoService{
     constructor(private http: HttpClient){}
 
     getPhotos(): Observable<Photos[]>{
-        return this.http.get<Photos[]>(this.url).pipe(
+        return this.http.get<Photos[]>(this.url)
+        .pipe(map(photos => {
+            return photos.map(photo => {
+                return { ...photo, title: photo.title.toUpperCase() }
+            })
+        }))
+        .pipe(
             delay(2000)
         )
     }
