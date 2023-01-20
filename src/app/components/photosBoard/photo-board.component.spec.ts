@@ -1,22 +1,8 @@
 import { SimpleChange, SimpleChanges } from '@angular/core';
-import { Photos } from './../../services/photos/photos.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { photosArray } from '../utils/fill-photos';
 import { PhotoBoardModule } from './photo-board.module';
 import { PhotosBoardsComponent } from "./photos-board.component";
-
-function photosArray(): Photos[] {
-    var photos: Photos[] = [];
-    for(let i = 0; i < 5; i++){
-        photos.push({
-            id: i,
-            title: `Photo ${i}`,
-            url: `www.photo${i}.com`
-        })
-    }
-
-    return photos;
-}
-
 
 describe(PhotosBoardsComponent.name, () => {
     let fixture: ComponentFixture<PhotosBoardsComponent>;
