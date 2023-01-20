@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
 
 
 export interface Photos{
@@ -19,6 +19,8 @@ export class PhotoService{
     constructor(private http: HttpClient){}
 
     getPhotos(): Observable<Photos[]>{
-        return this.http.get<Photos[]>(this.url);
+        return this.http.get<Photos[]>(this.url).pipe(
+            delay(2000)
+        )
     }
 }

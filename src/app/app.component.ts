@@ -9,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  public isLoading: boolean = true;
+
   photos: Photos[] = [];
 
   constructor(private service: PhotoService){}
 
-
   ngOnInit(): void {
-    this.service.getPhotos().subscribe({next: (photos) => this.photos = photos.slice(0,15)});
+    this.service.getPhotos().subscribe({next: (photos) => {
+      this.photos = photos.slice(0,15)
+      this.isLoading = false;
+    }});
   }
 
 }
