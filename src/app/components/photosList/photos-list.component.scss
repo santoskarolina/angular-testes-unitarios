@@ -1,0 +1,28 @@
+.app__content{
+    width: 100% !important;
+    display: flex;
+    align-items:center;
+
+    app-photos-board{
+        width: 100%;
+    }
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.377);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        color: #fff;
+        font-size: 4rem;
+        letter-spacing: 0.6rem;
+    }
+}

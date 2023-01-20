@@ -1,12 +1,10 @@
-import { ButtonNextPhotoModule } from './components/button-next-photo/button-next-photo.module';
+import { Routes } from '@angular/router';
+import { PhotosListModule } from './components/photosList/photos-list.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LikeModule } from './components/likeComponent/like.module';
-import { PhotoModule } from './components/photo/photo.module';
-import { PhotoBoardModule } from './components/photosBoard/photo-board.module';
 
 @NgModule({
   declarations: [
@@ -15,10 +13,7 @@ import { PhotoBoardModule } from './components/photosBoard/photo-board.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LikeModule,
-    PhotoModule,
-    ButtonNextPhotoModule,
-    PhotoBoardModule
+    PhotosListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

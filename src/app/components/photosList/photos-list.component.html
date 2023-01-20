@@ -1,0 +1,16 @@
+<div class="app__content">
+
+    <app-photos-board [photos]="photos" *ngIf="!isLoading; else loader">
+
+    </app-photos-board>
+
+  </div>
+
+
+  <ng-template #loader>
+
+    <div class="loader">
+      <p>Carregando...</p>
+    </div>
+
+  </ng-template>
